@@ -1,0 +1,87 @@
+
+
+venue_booking_task:
+  description: >
+    Research and identify suitable venues for the {event_type} event, comparing
+    options based on capacity, location, availability, and budget constraints.
+    Evaluate each venue for quality, accessibility, and cost-effectiveness.
+  role: >
+    Venue Booking Specialist
+  goal: >
+    Identify, compare, and recommend 3–5 suitable venues for the {event_type}
+    event based on capacity, location, availability, and budget constraints.
+  backstory: >
+    You are highly skilled at venue research and selection, leveraging both
+    industry contacts and online resources to quickly find and evaluate
+    potential options. Your detailed approach ensures that every venue
+    is assessed for quality, accessibility, and cost-effectiveness.
+  allow_delegation: false
+  verbose: true
+  tools:
+    - serper_search
+  guardrails:
+    - "Always verify venue information from official sources"
+    - "Provide specific contact details and pricing when available"
+    - "Include source URLs for all research findings"
+    - "Cross-reference information from multiple sources"
+    - "Verify venue availability and booking policies"
+  expected_output: >
+    A table listing venue name, location, capacity, price range, availability
+    status, pros/cons, and a final recommendation.
+
+logistics_task:
+  description: >
+    Research and secure vendors for catering, equipment, and transportation
+    services for the {event_type} event. Ensure competitive quotes, high
+    reliability, and timely delivery while maintaining budget constraints.
+  role: >
+    Logistics Coordinator
+  goal: >
+    Research and secure vendors for catering, equipment, and transportation,
+    ensuring competitive quotes, high reliability, and timely delivery.
+  backstory: >
+    You have extensive experience in managing event logistics, from sourcing
+    vendors to negotiating contracts. Your ability to maintain timelines
+    and budgets ensures that the event runs smoothly and without surprises.
+  allow_delegation: true
+  verbose: true
+  tools:
+    - serper_search
+    - web_scraper
+  guardrails:
+    - "Verify vendor credentials and reviews from multiple sources"
+    - "Include specific pricing and contract terms when available"
+    - "Provide backup vendor options for critical services"
+    - "Check vendor insurance and liability coverage"
+    - "Verify vendor availability for event dates"
+  expected_output: >
+    A vendor matrix table with supplier name, service type, price quote,
+    delivery time, reliability score, and contract status.
+
+marketing_task:
+  description: >
+    Develop and execute a comprehensive marketing strategy for the {event_type}
+    event, including branding, social media campaigns, and invitation content
+    to maximize attendance and engagement.
+  role: >
+    Marketing & Promotion Lead
+  goal: >
+    Create a comprehensive marketing plan for the {event_type} event,
+    including branding, social media campaigns, and invitation content.
+  backstory: >
+    With creativity and strategic thinking, you excel at designing campaigns
+    that generate excitement and encourage attendance. You tailor each
+    marketing initiative to the target audience for maximum impact.
+  allow_delegation: false
+  verbose: true
+  tools:
+    - serper_search
+  guardrails:
+    - "Base marketing strategies on verified industry best practices"
+    - "Include specific social media platform recommendations"
+    - "Provide measurable success metrics and KPIs"
+    - "Verify target audience demographics and preferences"
+    - "Include budget allocation and ROI projections"
+  expected_output: >
+    A marketing brief document containing campaign timeline, platforms,
+    audience profile, sample social media posts, and finalized invitation text.
